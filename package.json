@@ -1,0 +1,27 @@
+{
+  "name": "serramentos",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "webp": "simple-webp-converter"
+  },
+  "simple-webp-converter": {
+    "src": "public/images/our-works/*.{png,jpg,PNG,JPG}"
+  },
+  "devDependencies": {
+    "simple-webp-converter": "^1.0.3",
+    "vite": "^7.0.4",
+    "vite-plugin-html-inject": "^1.1.2"
+  },
+  "dependencies": {
+    "@tailwindcss/vite": "^4.1.11",
+    "alpinejs": "^3.14.9",
+    "swiper": "^11.2.10",
+    "tailwindcss": "^4.1.11",
+    "zoomist": "^2.2.0"
+  }
+}

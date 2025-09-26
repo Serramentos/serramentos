@@ -1,0 +1,63 @@
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5ZN9FFVSWK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+
+  function gtag(){ dataLayer.push(arguments); }
+
+  gtag('js', new Date());
+  gtag('config', 'G-5ZN9FFVSWK');
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const bookMeasurementEls = document.querySelectorAll('.book-measurement');
+    const callUsEls = document.querySelectorAll('.call-us');
+    const emailUsEls = document.querySelectorAll('.email-us');
+    const fbEls = document.querySelectorAll('.facebook-link');
+    const instaEls = document.querySelectorAll('.insta-link');
+
+    bookMeasurementEls.forEach(el => {
+      el.addEventListener('click', () => {
+        gtag('event', 'book_measurement', {
+          event_category: 'engagement',
+          event_label: 'Book Measurement Button (Richiedi un sopralluogo Button)'
+        });
+      });
+    });
+
+    callUsEls.forEach(el => {
+      el.addEventListener('click', () => {
+        gtag('event', 'contact_click', {
+          event_category: 'contact',
+          event_label: 'Call Us'
+        });
+      });
+    });
+
+    emailUsEls.forEach(el => {
+      el.addEventListener('click', () => {
+        gtag('event', 'contact_click', {
+          event_category: 'contact',
+          event_label: 'Email Us'
+        });
+      });
+    });
+
+    fbEls.forEach(el => {
+      el.addEventListener('click', () => {
+        gtag('event', 'social_click', {
+          event_category: 'social',
+          event_label: 'Facebook'
+        });
+      });
+    });
+
+    instaEls.forEach(el => {
+      el.addEventListener('click', () => {
+        gtag('event', 'social_click', {
+          event_category: 'social',
+          event_label: 'Instagram'
+        });
+      });
+    });
+  });
+</script>

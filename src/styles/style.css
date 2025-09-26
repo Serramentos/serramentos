@@ -1,0 +1,113 @@
+@font-face {
+  font-family: 'Lato';
+  src: url('/fonts/Lato-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Lato';
+  src: url('/fonts/Lato-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Lato';
+  src: url('/fonts/Lato-Black.woff2') format('woff2');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@import 'tailwindcss';
+@import 'swiper/css';
+
+@theme {
+  --container-width: 1440px;
+  --color-brand: #4CAFB6;
+  --color-primary: #3B3B3B;
+  --tracking-1px: 1px;
+}
+
+@layer base {
+  html {
+    @apply h-full scroll-smooth text-base text-primary tracking-1px font-['Lato'];
+  }
+}
+
+@layer utilities {
+  html:has(body.no-scroll),
+  body.no-scroll,
+  body:has(.menu.active) {
+    @apply overflow-hidden;
+  }
+
+  .container {
+    @apply mx-auto w-full max-w-full overflow-hidden px-4 xl:max-w-[var(--container-width)];
+  }
+
+  a {
+    @apply transition-colors;
+  }
+
+  .swiper-pagination {
+    @apply flex justify-center items-center gap-2;
+  }
+
+  .swiper-pagination:has(:only-child) {
+    @apply hidden;
+  }
+
+  .swiper-pagination .swiper-pagination-bullet {
+    @apply h-2 w-2 rounded-full bg-primary/20;
+  }
+
+  .swiper-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active {
+    @apply bg-brand;
+  }
+}
+
+.brands .swiper:not(.swiper-initialized) .swiper-wrapper {
+  gap: 20px;
+}
+
+.brands .swiper:not(.swiper-initialized) .swiper-slide {
+  width: 82%;
+}
+
+@media screen and (min-width: 768px) {
+  .reviews .swiper:not(.swiper-initialized) .swiper-wrapper {
+    gap: 20px;
+  }
+
+  .reviews .swiper:not(.swiper-initialized) .swiper-slide {
+    width: calc(50% - 10px);
+  }
+
+  .brands .swiper:not(.swiper-initialized) .swiper-slide {
+    width: 44%;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .brands .swiper:not(.swiper-initialized) .swiper-wrapper {
+    gap: 40px;
+  }
+
+  .brands .swiper:not(.swiper-initialized) .swiper-slide {
+    width: 29%;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .reviews .swiper:not(.swiper-initialized) .swiper-slide {
+    width: calc((100% / 3) - 13px);
+  }
+
+  .brands .swiper:not(.swiper-initialized) .swiper-slide {
+    width: calc(25% - 30px);
+  }
+}

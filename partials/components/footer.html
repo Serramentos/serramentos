@@ -1,0 +1,141 @@
+<footer class="bg-brand/90 py-6 text-white/90 lg:py-10" id="contact">
+  <div class="container">
+    <div class="flex flex-col lg:flex-row lg:flex-wrap">
+      <div class="logo-wrapper border-b border-white/20 pb-6 mb-6 lg:pb-0 lg:mb-0 lg:border-b-0 lg:order-1 lg:w-1/3">
+        <a href="/" class="flex justify-center gap-5 font-bold lg:justify-start">
+          <load src="partials/icons/window.html" />
+
+          <div class="flex flex-col justify-center gap-1">
+            <span class="text-2xl">SERRAMENTOS</span>
+            <span class="text-sm uppercase">Infissi & Ristrutturazioni</span>
+          </div>
+        </a>
+      </div>
+
+      <div class="reviews-wrapper text-center font-bold text-lg border-b border-white/20 pb-6 lg:pb-0 lg:border-b-0 lg:order-2 lg:w-1/3 lg:text-xl">
+        <div class="flex justify-center gap-1 mb-2.5">
+          <load src="partials/icons/star.html" />
+          <load src="partials/icons/star.html" />
+          <load src="partials/icons/star.html" />
+          <load src="partials/icons/star.html" />
+          <load src="partials/icons/star.html" />
+        </div>
+        100+ CLIENTI SODDISFATTI
+      </div>
+
+      <div class="menu-wrapper mb-6 lg:order-4 lg:w-full lg:border-t lg:border-b lg:border-white/20 lg:flex lg:justify-between lg:gap-35 lg:py-10 lg:my-10">
+        <div class="hidden lg:block">
+          <div class="font-black text-xl mb-4">CONTATTACI</div>
+
+          <div class="socials flex flex-col gap-2">
+            <a href="tel: 3397670724" title="Call Us" class="call-us inline-flex items-center gap-2">
+              <load src="partials/icons/phone.html" />
+
+              <span class="hidden lg:inline">339 767 07 24</span>
+            </a>
+
+            <a href="mailto: serramentos@gmail.com" title="Email Us" class="email-us inline-flex items-center gap-2">
+              <load src="partials/icons/email.html" />
+
+              <span class="hidden lg:inline">serramentos@gmail.com</span>
+            </a>
+          </div>
+        </div>
+
+        <ul class="menu flex flex-col lg:flex-row lg:justify-between lg:w-full xl:max-w-[900px]">
+          <li x-data="{ active: false }">
+            <div class="flex items-center justify-between font-bold border-b border-white/20 py-4 lg:border-b-0 lg:p-0 lg:mb-4"
+              :class="{ '!border-transparent': active }"
+              @click="active = !active">
+              COSA FACCIAMO
+
+              <span class="rotate-90 lg:hidden" :class="{ '!-rotate-90': active }">
+                <load src="partials/icons/chevron-right.html" />
+              </span>
+            </div>
+
+            <ul class="hidden border-b border-white/20 pb-4 flex-col gap-2 lg:flex lg:border-b-0 lg:pb-0" :class="{ '!flex': active }">
+              <li>
+                <a href="./finestre.html">Finestre</a>
+              </li>
+              <li>
+                <a href="./porte.html">Porte</a>
+              </li>
+              <li>
+                <a href="./grate.html">Grate</a>
+              </li>
+              <li>
+                <a href="./tapparelle.html">Tapparelle</a>
+              </li>
+              <li>
+                <a href="./zanzariere.html">Zanzariere</a>
+              </li>
+            </ul>
+          </li>
+
+          <li x-data="{ active: false }">
+            <div class="flex items-center justify-between font-bold border-b border-white/20 py-4 lg:border-b-0 lg:p-0 lg:mb-4"
+              :class="{ '!border-transparent': active }"
+              @click="active = !active">
+              MARCHI
+
+              <span class="rotate-90 lg:hidden" :class="{ '!-rotate-90': active }">
+                <load src="partials/icons/chevron-right.html" />
+              </span>
+            </div>
+
+            <ul class="hidden border-b border-white/20 pb-4 flex-col gap-2 lg:flex lg:border-b-0 lg:pb-0" :class="{ '!flex': active }">
+              <li>REHAU</li>
+              <li>Kommerling</li>
+              <li>VEKA</li>
+              <li>WDS</li>
+            </ul>
+          </li>
+
+          <li x-data="{ active: false }">
+            <div class="flex items-center justify-between font-bold border-b border-white/20 py-4 lg:border-b-0 lg:p-0 lg:mb-4"
+              :class="{ '!border-transparent': active }"
+              @click="active = !active">
+              AZIENDA
+
+              <span class="rotate-90 lg:hidden" :class="{ '!-rotate-90': active }">
+                <load src="partials/icons/chevron-right.html" />
+              </span>
+            </div>
+
+            <ul class="hidden border-b border-white/20 pb-4 flex-col gap-2 lg:flex lg:border-b-0 lg:pb-0" :class="{ '!flex': active }">
+              <li>
+                <a href="./i-nostri-lavori.html">I Nostri Lavori</a>
+              </li>
+              <li>
+                <a href="./chi-siamo.html">Chi Siamo</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+
+      <div class="socials-wrapper flex justify-center items-center gap-6 border-b border-white/20 pb-6 mb-6 lg:order-3 lg:w-1/3 lg:pb-0 lg:mb-0 lg:border-b-0 lg:justify-end">
+        <a href="#" class="facebook-link bg-white/90 text-brand h-10 w-10 rounded inline-flex items-center justify-center" title="Facebook" target="_blank" rel="noreferrer noopener">
+          <load src="partials/icons/facebook.html" />
+        </a>
+
+        <a href="https://www.instagram.com/serramentos" class="insta-link bg-white/90 text-brand h-10 w-10 rounded inline-flex items-center justify-center" title="Instagram" target="_blank" rel="noreferrer noopener">
+          <load src="partials/icons/instagram.html" />
+        </a>
+
+        <a href="mailto: serramentos@gmail.com" class="email-us bg-white/90 text-brand h-10 w-10 rounded inline-flex items-center justify-center lg:hidden" title="Email Us" target="_blank" rel="noreferrer noopener">
+          <load src="partials/icons/email.html" />
+        </a>
+
+        <a href="tel: 3397670724" class="call-us bg-white/90 text-brand h-10 w-10 rounded inline-flex items-center justify-center lg:hidden" title="Call Us" target="_blank" rel="noreferrer noopener">
+          <load src="partials/icons/phone.html" />
+        </a>
+      </div>
+
+      <div class="copyright-wrapper text-sm text-center lg:text-left lg:order-5 lg:w-full">
+        Serramentos © 2025
+      </div>
+    </div>
+  </div>
+</footer>
