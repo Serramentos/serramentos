@@ -10,7 +10,7 @@
     "webp": "simple-webp-converter"
   },
   "simple-webp-converter": {
-    "src": "public/images/our-works/*.{png,jpg,PNG,JPG}"
+    "src": "public/images/tapparelle/*.{png,jpg,PNG,JPG}"
   },
   "devDependencies": {
     "simple-webp-converter": "^1.0.3",
