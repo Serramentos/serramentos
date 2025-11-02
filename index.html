@@ -12,7 +12,7 @@
 
   <load src="partials/head/gtag.html" />
 
-  <body>
+  <body x-data="{ formOpen: false }">
     <load src="partials/components/header.html" />
 
     <main>
@@ -26,7 +26,10 @@
                 Finestre , Tapparelle, Zanzariere, <br>Installazione entro 30 giorni, <br>Qualità premium
               </h2>
 
-              <a href="tel: 3397670724" title="Richiedi un preventivo" class="book-measurement inline-block bg-brand uppercase rounded p-3 text-center text-white font-black shadow-[0px_3px_5px_rgba(0,0,0,0.5)] md:text-lg">
+              <a href="tel: 3397670724"
+                title="Richiedi un preventivo"
+                class="book-measurement inline-block bg-brand uppercase rounded p-3 text-center text-white font-black shadow-[0px_3px_5px_rgba(0,0,0,0.5)] md:text-lg"
+                @click.prevent="formOpen = true">
                 Richiedi un preventivo
               </a>
             </div>
@@ -321,6 +324,7 @@
       </div>
     </main>
 
+    <load src="partials/components/form.html" />
     <load src="partials/components/footer.html" />
     <script type="module" src="/src/main.js"></script>
   </body>

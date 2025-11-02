@@ -1,0 +1,78 @@
+<div class="form-wrapper fixed inset-0 flex items-center justify-center opacity-0 pointer-events-none transition-opacity z-100"
+  :class="{ 'active !opacity-100 !pointer-events-auto': formOpen }">
+  <form class="group bg-white rounded px-5 pt-5 pb-7.5 z-101 w-[90%] max-w-150 relative"
+    name="contact"
+    method="POST"
+    netlify
+    x-data="{ loading: false, success: false }"
+    @submit.prevent="async () => {
+      loading = true;
+
+      const formData = new FormData($el);
+
+      try {
+        await fetch('/', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: new URLSearchParams(formData).toString()
+        });
+
+        success = true;
+
+        setTimeout(() => success = false, 15000);
+      } catch (error) {
+        success = false
+        console.error('Form submit error', error);
+      } finally {
+        loading = false;
+      }
+    }"
+  >
+    <input type="hidden" name="form-name" value="RichiediUnPreventivo" />
+
+    <div class="success-message text-center font-bold bg-brand text-white p-3.5 mb-5 rounded hidden"
+      :class="{ '!block': success }"
+    >
+      <div>Grazie!</div>
+      <div>La tua domanda è accettata!</div>
+      <div>Sarai contattato presto!</div>
+    </div>
+
+    <div class="field mb-5">
+      <label for="name" class="block text-xs mb-1.5">Nome <span class="text-brand">*</span></label>
+      <input type="text" name="name" id="name" class="w-full h-12.5 rounded border border-black/20 py-2.5 px-4" placeholder="Nome" required>
+    </div>
+
+    <div class="field mb-5">
+      <label for="email" class="block text-xs mb-1.5">Email <span class="text-brand">*</span></label>
+      <input type="email" name="email" id="email" class="w-full h-12.5 rounded border border-black/20 py-2.5 px-4" placeholder="Email" required>
+    </div>
+
+    <div class="field mb-5">
+      <label for="phone" class="block text-xs mb-1.5">Telefono <span class="text-brand">*</span></label>
+      <input type="tel" name="phone" id="phone" class="w-full h-12.5 rounded border border-black/20 py-2.5 px-4" placeholder="Telefono" required>
+    </div>
+
+    <div class="field mb-5">
+      <label for="message" class="block text-xs mb-1.5">Messaggio</label>
+      <textarea name="message" id="message" class="w-full h-12.5 rounded border border-black/20 py-2.5 px-4 resize-none min-h-25" placeholder="Messaggio"></textarea>
+    </div>
+
+    <button title="Richiedi un preventivo" type="submit" class="book-measurement w-full block bg-brand uppercase rounded p-3 text-center text-white font-black shadow-[0px_3px_5px_rgba(0,0,0,0.5)] md:text-lg">
+      Richiedi un preventivo
+    </button>
+
+    <div class="loader absolute inset-0 z-200 pointer-events-none opacity-0 transition-opacity"></div>
+  </form>
+
+  <div class="form-overlay bg-black/20 fixed inset-0 z-100 opacity-0 pointer-events-none transition-opacity"
+    :class="{ '!opacity-100 !pointer-events-auto': formOpen }"
+    @click="formOpen = false">
+  </div>
+</div>
+
+<style>
+  body:has(.form-wrapper.active) {
+    overflow: hidden;
+  }
+</style>
