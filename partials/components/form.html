@@ -1,6 +1,6 @@
 <div class="form-wrapper fixed inset-0 flex items-center justify-center opacity-0 pointer-events-none transition-opacity z-100"
   :class="{ 'active !opacity-100 !pointer-events-auto': formOpen }">
-  <form class="group bg-white rounded px-5 pt-5 pb-7.5 z-101 w-[90%] max-w-150 relative"
+  <form class="group bg-white rounded px-5 py-7.5 z-101 w-[90%] max-w-150 relative"
     name="contact"
     method="POST"
     data-netlify-recaptcha="true"
@@ -30,6 +30,10 @@
       }
     }"
   >
+    <button class="text-black/50 absolute right-4 top-4 z-10 cursor-pointer transition-colors hover:text-black" @click.prevent="formOpen = false">
+      <load src="partials/icons/cross.html" />
+    </button>
+
     <input type="hidden" name="form-name" value="contact" />
 
     <div class="success-message text-center font-bold bg-brand text-white p-3.5 mb-5 rounded hidden"
@@ -62,7 +66,7 @@
 
     <div class="mb-5" data-netlify-recaptcha="true"></div>
 
-    <button title="Richiedi un preventivo" type="submit" class="book-measurement w-full block bg-brand uppercase rounded p-3 text-center text-white font-black shadow-[0px_3px_5px_rgba(0,0,0,0.5)] md:text-lg">
+    <button title="Richiedi un preventivo" type="submit" class="book-measurement w-full cursor-pointer block bg-brand uppercase rounded p-3 text-center text-white font-black shadow-[0px_3px_5px_rgba(0,0,0,0.5)] md:text-lg">
       Richiedi un preventivo
     </button>
 
@@ -75,7 +79,7 @@
 
   <div class="form-overlay bg-black/20 fixed inset-0 z-100 opacity-0 pointer-events-none transition-opacity"
     :class="{ '!opacity-100 !pointer-events-auto': formOpen }"
-    @click="if (!loading) formOpen = false">
+    @click="formOpen = false">
   </div>
 </div>
 
