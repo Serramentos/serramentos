@@ -3,7 +3,8 @@
   <form class="group bg-white rounded px-5 pt-5 pb-7.5 z-101 w-[90%] max-w-150 relative"
     name="contact"
     method="POST"
-    netlify
+    data-netlify-recaptcha="true"
+    data-netlify="true"
     x-data="{ loading: false, success: false }"
     @submit.prevent="async () => {
       loading = true;
@@ -59,16 +60,22 @@
       <textarea name="message" id="message" class="w-full h-12.5 rounded border border-black/20 py-2.5 px-4 resize-none min-h-25" placeholder="Messaggio"></textarea>
     </div>
 
+    <div class="mb-5" data-netlify-recaptcha="true"></div>
+
     <button title="Richiedi un preventivo" type="submit" class="book-measurement w-full block bg-brand uppercase rounded p-3 text-center text-white font-black shadow-[0px_3px_5px_rgba(0,0,0,0.5)] md:text-lg">
       Richiedi un preventivo
     </button>
 
-    <div class="loader absolute inset-0 z-200 pointer-events-none opacity-0 transition-opacity"></div>
+    <div class="loader flex items-center justify-center bg-white/50 absolute inset-0 z-200 pointer-events-none opacity-0 transition-opacity" :class="{ '!opacity-100': loading }">
+      <div class="animate-spin text-brand">
+        <load src="partials/icons/loader.html" />
+      </div>
+    </div>
   </form>
 
   <div class="form-overlay bg-black/20 fixed inset-0 z-100 opacity-0 pointer-events-none transition-opacity"
     :class="{ '!opacity-100 !pointer-events-auto': formOpen }"
-    @click="formOpen = false">
+    @click="if (!loading) formOpen = false">
   </div>
 </div>
 
