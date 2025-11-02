@@ -17,6 +17,7 @@
           body: new URLSearchParams(formData).toString()
         });
 
+        $el.querySelectorAll('input, textarea').forEach(el => el.value = '');
         success = true;
 
         setTimeout(() => success = false, 15000);
