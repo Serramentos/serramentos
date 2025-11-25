@@ -6,13 +6,15 @@
     <meta name="description" content="Serramentos: finestre, porte, inferriate e infissi moderni, sicuri ed efficienti. Lavorazione di alta qualità, prezzi equi e un servizio clienti eccezionale. Prenota subito la tua misurazione!" />
 
     <link rel="icon" type="image/png" href="/favicon.png">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png" />
     <link href="/src/styles/style.css" rel="stylesheet">
     <title>SERRAMENTOS</title>
   </head>
 
   <load src="partials/head/gtag.html" />
 
-  <body x-data="{ formOpen: false }">
+  <body x-data="{ formOpen: false }" @open-form.window="formOpen = true">
     <load src="partials/components/header.html" />
 
     <main>

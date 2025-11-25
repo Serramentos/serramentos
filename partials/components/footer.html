@@ -34,7 +34,7 @@
               <span class="hidden lg:inline">339 767 07 24</span>
             </a>
 
-            <a href="mailto: serramentos@gmail.com" title="Email Us" class="email-us inline-flex items-center gap-2">
+            <a href="mailto: serramentos@gmail.com" title="Email Us" class="email-us inline-flex items-center gap-2" @click.prevent="$dispatch('open-form')">
               <load src="partials/icons/email.html" />
 
               <span class="hidden lg:inline">serramentos@gmail.com</span>
@@ -124,7 +124,7 @@
           <load src="partials/icons/instagram.html" />
         </a>
 
-        <a href="mailto: serramentos@gmail.com" class="email-us bg-white/90 text-brand h-10 w-10 rounded inline-flex items-center justify-center lg:hidden" title="Email Us" target="_blank" rel="noreferrer noopener">
+        <a href="mailto: serramentos@gmail.com" class="email-us bg-white/90 text-brand h-10 w-10 rounded inline-flex items-center justify-center lg:hidden" title="Email Us" target="_blank" rel="noreferrer noopener" @click.prevent="$dispatch('open-form')">
           <load src="partials/icons/email.html" />
         </a>
 

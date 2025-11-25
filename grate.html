@@ -4,13 +4,15 @@
     <load src="partials/head/meta.html" />
 
     <link rel="icon" type="image/png" href="/favicon.png">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png" />
     <link href="/src/styles/style.css" rel="stylesheet">
     <title>SERRAMENTOS | GRATE</title>
   </head>
 
   <load src="partials/head/gtag.html" />
 
-  <body>
+  <body x-data="{ formOpen: false }" @open-form.window="formOpen = true">
     <load src="partials/components/header.html" />
 
     <main>
@@ -25,6 +27,7 @@
       <load src="partials/components/slider-grate.html" />
     </main>
 
+    <load src="partials/components/form.html" />
     <load src="partials/components/footer.html" />
     <script type="module" src="/src/main.js"></script>
   </body>
